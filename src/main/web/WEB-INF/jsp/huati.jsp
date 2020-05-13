@@ -20,7 +20,7 @@
     <li><a href="">登录</a></li>
     <li><a href="">注册</a></li>
 </div>
-<div id="content">
+<div id="content" style="width: 65vw;">
     <div id="list">
         <div id="title">
             账号管理
@@ -29,7 +29,7 @@
             <li><a href="/index">个人资料</a></li>
             <li><a href="/huati">创建投票</a></li>
             <li><a href="/guanli">活动管理</a></li>
-            <li><a href="">数据统计</a></li>
+            <li><a href="/tongji">数据统计</a></li>
         </div>
     </div>
     <div id="form">

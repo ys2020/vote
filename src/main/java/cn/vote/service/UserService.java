@@ -5,6 +5,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserService {
+    User login(User user);
+
+    User getuserName(String name);
+
     int deleteByPrimaryKey(Integer uid);
 
     int insert(User record);

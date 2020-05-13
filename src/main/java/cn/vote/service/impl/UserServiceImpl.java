@@ -10,6 +10,24 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
+
+    @Override
+    public User login(User user) {
+        User loginUser =  userMapper.getuserName(user.getUname());
+        if (loginUser == null){
+            return null;
+        }
+        if(!loginUser.getPassword().equals(user.getPassword())){
+            return null;
+        }
+        return loginUser;
+    }
+
+    @Override
+    public User getuserName(String name) {
+        return null;
+    }
+
     @Override
     public int deleteByPrimaryKey(Integer uid) {
         return userMapper.deleteByPrimaryKey(uid);

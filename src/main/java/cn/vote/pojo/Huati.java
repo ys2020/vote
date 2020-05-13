@@ -1,6 +1,6 @@
 package cn.vote.pojo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Huati {
     private Integer hid;

@@ -1,6 +1,6 @@
 package cn.vote.pojo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class User {
     private Integer uid;

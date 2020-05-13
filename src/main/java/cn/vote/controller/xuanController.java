@@ -14,7 +14,7 @@ import java.util.List;
 public class xuanController {
     @Autowired
     XuanService xuanService;
-    @RequestMapping("/getxuan")
+    @RequestMapping("/tongji")
     public String getXuan(Model model){
         List<Xuan> xuan = xuanService.getXuan();
         model.addAttribute("xuan",xuan);

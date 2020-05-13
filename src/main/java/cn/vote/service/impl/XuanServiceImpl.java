@@ -18,31 +18,31 @@ public class XuanServiceImpl implements XuanService {
 
     @Override
     public int deleteByPrimaryKey(Integer xid) {
-        return 0;
+        return xuanMapper.deleteByPrimaryKey(xid);
     }
 
     @Override
     public int insert(Xuan record) {
-        return 0;
+        return xuanMapper.insert(record);
     }
 
     @Override
     public int insertSelective(Xuan record) {
-        return 0;
+        return xuanMapper.insertSelective(record);
     }
 
     @Override
     public Xuan selectByPrimaryKey(Integer xid) {
-        return null;
+        return xuanMapper.selectByPrimaryKey(xid);
     }
 
     @Override
     public int updateByPrimaryKeySelective(Xuan record) {
-        return 0;
+        return xuanMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Xuan record) {
-        return 0;
+        return xuanMapper.updateByPrimaryKey(record);
     }
 }

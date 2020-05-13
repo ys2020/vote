@@ -6,23 +6,31 @@ import cn.vote.service.HuaTiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HuaTiServiceImpl implements HuaTiService {
     @Autowired
     HuatiMapper huatiMapper;
+
+    @Override
+    public List<Huati> getHuati() {
+        return huatiMapper.getHuati();
+    }
+
     @Override
     public int deleteByPrimaryKey(Integer hid) {
-        return 0;
+        return huatiMapper.deleteByPrimaryKey(hid);
     }
 
     @Override
     public int insert(Huati record) {
-        return 0;
+        return huatiMapper.insert(record);
     }
 
     @Override
     public int insertSelective(Huati record) {
-        return 0;
+        return huatiMapper.insertSelective(record);
     }
 
     @Override
@@ -32,11 +40,11 @@ public class HuaTiServiceImpl implements HuaTiService {
 
     @Override
     public int updateByPrimaryKeySelective(Huati record) {
-        return 0;
+        return huatiMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(Huati record) {
-        return 0;
+        return huatiMapper.updateByPrimaryKey(record);
     }
 }

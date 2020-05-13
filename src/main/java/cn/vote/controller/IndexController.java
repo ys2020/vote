@@ -17,18 +17,14 @@ public class IndexController {
     public String collection(){
         return "xuan";
     }
-    @RequestMapping("/guanli")
-    public String shopcart(){
-        return "guanli";
-    }
-    @RequestMapping("/tongji")
-    public String introduction(){
-        return "tongji";
-    }
-    @RequestMapping("/pay")
-    public String pay(){
-        return "home/pay";
-    }
+//    @RequestMapping("/guanli")
+//    public String shopcart(){
+//        return "guanli";
+//    }
+//    @RequestMapping("/login")
+//    public String pay(){
+//        return "login";
+//    }
     @RequestMapping("/success")
     public String success(){
         return "home/success";

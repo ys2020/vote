@@ -1,13 +1,11 @@
-package cn.vote.dao;
+package cn.vote.service;
 
 import cn.vote.pojo.Huati;
 import cn.vote.pojo.Utable;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface UtableMapper {
-    @Select("select * from utable")
+public interface UtableService {
     List<Utable> getUtable();
 
     int deleteByPrimaryKey(Integer id);

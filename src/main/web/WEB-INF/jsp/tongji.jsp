@@ -32,10 +32,10 @@
             <li><a href="/index">个人资料</a></li>
             <li><a href="/huati">创建投票</a></li>
             <li><a href="/guanli">活动管理</a></li>
-            <li><a href="">数据统计</a></li>
+            <li><a href="/tongji">数据统计</a></li>
         </div>
     </div>
-    <div id="form">
+    <div id="form" style="width: 65vw">
         <div id="top">
             <a href="">数据统计</a><p style="width: 100%;"><hr ></p>
         </div>
@@ -52,9 +52,9 @@
                 <tbody>
                <c:forEach items="${xuan}" var="xx">
                    <tr>
-                       <td>${xx.xname}</td>
-                       <td>${xx.xcontent}</td>
-                       <td>${xx.xcount}</td>
+                       <td style="width: 5vw">${xx.xname}</td>
+                       <td style="word-break : break-all; overflow:hidden;width: 50vw">${xx.xcontent}</td>
+                       <td style="width:6vw">${xx.xcount}</td>
                        <td>
                            <button type="button" class="btn btn-primary">编辑</button>
                            <button type="button" class="btn btn-danger">删除</button>
