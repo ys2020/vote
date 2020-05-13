@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.vote.dao.XuanMapper">
+  <resultMap id="BaseResultMap" type="cn.vote.pojo.Xuan">
+    <id column="xid" jdbcType="INTEGER" property="xid" />
+    <result column="hid" jdbcType="INTEGER" property="hid" />
+    <result column="xname" jdbcType="VARCHAR" property="xname" />
+    <result column="xcount" jdbcType="INTEGER" property="xcount" />
+    <result column="xcontent" jdbcType="VARCHAR" property="xcontent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    xid, hid, xname, xcount, xcontent
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from xuan
+    where xid = #{xid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from xuan
+    where xid = #{xid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.vote.pojo.Xuan">
+    insert into xuan (xid, hid, xname, 
+      xcount, xcontent)
+    values (#{xid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER}, #{xname,jdbcType=VARCHAR}, 
+      #{xcount,jdbcType=INTEGER}, #{xcontent,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.vote.pojo.Xuan">
+    insert into xuan
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="xid != null">
+        xid,
+      </if>
+      <if test="hid != null">
+        hid,
+      </if>
+      <if test="xname != null">
+        xname,
+      </if>
+      <if test="xcount != null">
+        xcount,
+      </if>
+      <if test="xcontent != null">
+        xcontent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="xid != null">
+        #{xid,jdbcType=INTEGER},
+      </if>
+      <if test="hid != null">
+        #{hid,jdbcType=INTEGER},
+      </if>
+      <if test="xname != null">
+        #{xname,jdbcType=VARCHAR},
+      </if>
+      <if test="xcount != null">
+        #{xcount,jdbcType=INTEGER},
+      </if>
+      <if test="xcontent != null">
+        #{xcontent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.vote.pojo.Xuan">
+    update xuan
+    <set>
+      <if test="hid != null">
+        hid = #{hid,jdbcType=INTEGER},
+      </if>
+      <if test="xname != null">
+        xname = #{xname,jdbcType=VARCHAR},
+      </if>
+      <if test="xcount != null">
+        xcount = #{xcount,jdbcType=INTEGER},
+      </if>
+      <if test="xcontent != null">
+        xcontent = #{xcontent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where xid = #{xid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.vote.pojo.Xuan">
+    update xuan
+    set hid = #{hid,jdbcType=INTEGER},
+      xname = #{xname,jdbcType=VARCHAR},
+      xcount = #{xcount,jdbcType=INTEGER},
+      xcontent = #{xcontent,jdbcType=VARCHAR}
+    where xid = #{xid,jdbcType=INTEGER}
+  </update>
+</mapper>

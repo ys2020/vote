@@ -1,0 +1,90 @@
+li{
+	list-style: none;
+	margin-left: 40px;
+	margin-right: 20px;
+}
+.nav-top{
+	background-color: royalblue;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	height: 50px;
+	line-height: 50px;
+}
+.nav-top a{
+	font-size: 20px;
+	color: white;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+#content{
+	display: flex;
+	flex-direction: row;
+	/* flex-direction: column; */
+	margin: 20px 150px 0 150px;
+}
+#list{
+	width: 200px;
+	font-weight: 200;
+	font-size: 24px;
+	/* float: left; */
+	height: 499px;
+	/* padding: 10px 0; */
+}
+#tlist li{
+	padding: 5px 0;
+}
+#title{
+	color: black;
+	text-align: center;
+	font-size: 30px;
+}
+#xian{
+	height: 20px;
+	line-height: 20px;
+}
+a{
+	text-decoration: none;
+	color: forestgreen;
+	font-size: 26px;
+}
+#top{
+	/* margin: 20px 0; */
+	/* display: flex;
+	flex-direction: row;
+	align-items: center; */
+	
+	padding-bottom: 20px;
+}
+#info p{
+	font-size: 20px;
+	font-style: normal;
+	padding:10px 0;
+}
+#info span{
+	color: dodgerblue;
+}
+#info input{
+	height: 30px;
+	width: 300px;
+}
+#info p:nth-of-type(2){
+	text-align: center;
+}
+#text{
+	height: 100px;
+	width: 500px;
+}
+#textfont{
+	position: relative;
+	bottom: 50px;
+}
+.table table-bordered td,th{
+	width: 20px;
+}
+.addbtn button{
+	margin: 10px 0;
+	margin-right: 10px;
+}
