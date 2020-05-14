@@ -45,4 +45,9 @@ public class XuanServiceImpl implements XuanService {
     public int updateByPrimaryKey(Xuan record) {
         return xuanMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public int dovote(Integer id) {
+        return xuanMapper.dovote(id);
+    }
 }

@@ -32,7 +32,7 @@
             <li><a href="/tongji">数据统计</a></li>
         </div>
     </div>
-    <div id="form">
+    <div id="form" style="width: 65vw">
         <div id="top">
             <a href="">创建投票</a><p style="width: 100%;"><hr ></p>
         </div>

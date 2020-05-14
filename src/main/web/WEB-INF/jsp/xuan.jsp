@@ -41,10 +41,12 @@
         </div>
         <button type="button" onclick="add()" value="添加新选项" class="btn btn-primary" style="margin-bottom: 5px;">添加新选项</button>
         <from>
-            <div id="info">
+            <div id="info" style="width: 65vw">
                 <div class="xuanxiang" id="xuanxiang1">
                     <div class="bianhao">
-                        编号:1 	<input type="text" name="NickName"  placeholder="请输入名称" rel="519050" value="">
+                        编号:1 <input type="text" name="id"  placeholder="请输入名称" rel="519050" value=""><br/>
+                        选项名称:<input type="text" name="hname"  placeholder="请输入名称" rel="519050" value=""><br/>
+                        选项描述:<input type="text" name="des"  placeholder="请输入名称" rel="519050" value="">
                     </div>
                     <div class="addbtn">
                         <button class="btn btn-primary" rel="519050" Describe="">修改描述</button>
@@ -54,7 +56,9 @@
 
                 <div class="xuanxiang" id="xuanxiang2">
                     <div class="bianhao">
-                        编号:2 	<input type="text" name="NickName"  placeholder="请输入名称" rel="519050" value="">
+                        编号:2 <input type="text" name="id"  placeholder="请输入名称" rel="519050" value=""><br/>
+                        选项名称:<input type="text" name="hname"  placeholder="请输入名称" rel="519050" value=""><br/>
+                        选项描述:<input type="text" name="des"  placeholder="请输入名称" rel="519050" value="">
                     </div>
                     <div class="addbtn">
                         <button class="btn btn-primary" name=""  id="" rel="519050" Describe="">修改描述</button>
@@ -82,7 +86,9 @@
         var div=document.createElement("div");
         div.innerHTML=
             '<div class="bianhao">'+
-            '编号:'+i+' <input type="text" name="NickName" class="bh-input nickname" placeholder="请输入名称"  value="">'+
+            '编号:'+i+' <input type="text" name="id" class="bh-input nickname" placeholder="请输入名称"  value=""><br/>'+
+            '选项名称:<input type="text" name="hname"  placeholder="请输入名称" rel="519050" value=""><br/>'+
+            '选项描述:<input type="text" name="des"  placeholder="请输入名称" rel="519050" value="">'+
             '</div>'+
             '<div class="addbtn">'+
             '<button class="btn btn-primary" rel="519050" Describe="">修改描述</button>'+

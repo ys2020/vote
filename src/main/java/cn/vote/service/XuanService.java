@@ -18,4 +18,6 @@ public interface XuanService {
     int updateByPrimaryKeySelective(Xuan record);
 
     int updateByPrimaryKey(Xuan record);
+
+    int dovote(Integer id);
 }

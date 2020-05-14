@@ -28,4 +28,10 @@ public class XuanServiceImplTest extends BaseTest {
     @Test
     public void selectByPrimaryKey() {
     }
+
+    @Test
+    public void dovote() {
+        int dovote = xuanMapper.dovote(4);
+        System.out.println(dovote);
+    }
 }

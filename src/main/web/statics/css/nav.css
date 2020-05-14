@@ -72,7 +72,6 @@ a{
 	
 	padding-bottom: 20px;
 }
-
 #info p{
 	font-size: 20px;
 	font-style: normal;
@@ -85,7 +84,6 @@ a{
 	height: 30px;
 	width: 300px;
 }
-
 #text{
 	height: 100px;
 	width: 500px;
@@ -94,23 +92,32 @@ a{
 	position: relative;
 	bottom: 50px;
 }
-/*.table table-bordered td,th{*/
-/*	width: 20px;*/
-/*}*/
-th{
-	text-align: center;
+.table table-bordered td,th{
+	width: 20px;
 }
 .addbtn button{
 	margin: 10px 0;
 	margin-right: 10px;
 }
-.col-md-3{
-	border: red 1px solid;
+.dovote .col-md-3{
+	border: skyblue 1px solid;
+	word-break: break-word;
+	height: 15vw;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 20px;
 }
-#dovote{
+.dovote .col-md-3 p{
+	color: #228B22;
+	font-size: 24px;
+	font-weight: 100;
+}
+.dovote{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	margin: 0 300px;
+	margin: 0 150px;
 }

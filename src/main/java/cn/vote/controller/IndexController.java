@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
     @RequestMapping("/index")
     public String tologin(){
-        return "user";
+        return "index";
     }
     @RequestMapping("/huati")
     public String order(){
@@ -17,10 +17,10 @@ public class IndexController {
     public String collection(){
         return "xuan";
     }
-//    @RequestMapping("/guanli")
-//    public String shopcart(){
-//        return "guanli";
-//    }
+    @RequestMapping("/userinfo")
+    public String shopcart(){
+        return "user";
+    }
 //    @RequestMapping("/login")
 //    public String pay(){
 //        return "login";
