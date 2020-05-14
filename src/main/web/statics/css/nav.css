@@ -88,10 +88,6 @@ a{
 	height: 100px;
 	width: 500px;
 }
-#textfont{
-	position: relative;
-	bottom: 50px;
-}
 .table table-bordered td,th{
 	width: 20px;
 }

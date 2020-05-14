@@ -14,11 +14,8 @@ public class XuanServiceImplTest extends BaseTest {
     XuanMapper xuanMapper;
     @Test
     public void getXuan() {
-        Xuan xx =new Xuan(1,"ccss",3333,"hahaha");
-        List<Xuan> xuan = xuanMapper.getXuan();
-        for (Xuan xiang:xuan) {
-            System.out.println(xiang.toString());
-        }
+
+
     }
 
     @Test
@@ -33,5 +30,12 @@ public class XuanServiceImplTest extends BaseTest {
     public void dovote() {
         int dovote = xuanMapper.dovote(4);
         System.out.println(dovote);
+    }
+
+    @Test
+    public void testInsert() {
+        Xuan xx =new Xuan(3,2,"5678","hahhahaha");
+        int insert = xuanMapper.insert(xx);
+        System.out.println(insert);
     }
 }

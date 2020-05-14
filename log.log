@@ -4,3 +4,35 @@
 2020-5-14 11:33:25[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
 2020-5-14 11:33:25[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: UPDATE xuan SET xcount=xcount+1 WHERE xid =? 
 2020-5-14 11:33:25[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 4(Integer)
+2020-5-14 16:17:45[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 16:17:45[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: insert into huati (hid, hname, content, startTime, endTime, uid, ucount) values (?, ?, ?, ?, ?, ?, ?) 
+2020-5-14 16:17:45[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: null, 66666(String), 666666(String), 2020-05-14(Date), 2020-05-14(Date), 3(Integer), 33(Integer)
+2020-5-14 16:19:17[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 16:19:17[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: insert into huati ( hname, content, startTime, endTime, uid, ucount) values (?, ?, ?, ?, ?, ?) 
+2020-5-14 16:19:17[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 66666(String), 666666(String), 2020-05-14(Date), 2020-05-14(Date), 3(Integer), 33(Integer)
+2020-5-14 16:19:48[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 16:19:48[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: insert into huati ( hname, content, startTime, endTime, uid, ucount) values (?, ?, ?, ?, ?, ?) 
+2020-5-14 16:19:48[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 66666(String), 666666(String), 2020-05-14(Date), 2020-05-14(Date), 2(Integer), 33(Integer)
+2020-5-14 21:42:56[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 21:42:56[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: insert into xuan (xid, hid, xname, xcontent) values (?, ?, ?, ?) 
+2020-5-14 21:42:57[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 2(Integer), 2(Integer), 678(String), hahhahaha(String)
+2020-5-14 21:44:27[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 21:44:27[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: insert into xuan (xid, hid, xname, xcontent) values (?, ?, ?, ?) 
+2020-5-14 21:44:27[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 3(Integer), 2(Integer), 5678(String), hahhahaha(String)
+2020-5-14 21:56:07[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 21:56:07[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: insert into xuan (xid, hid, xname, xcontent) values (?, ?, ?, ?) 
+2020-5-14 21:56:07[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 3(Integer), 2(Integer), 5678(String), hahhahaha(String)
+2020-5-14 22:24:18[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 22:24:18[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: select hid, hname, content, startTime, endTime, uid, ucount from huati where uid = ? and like concat('%',?,'%') 
+2020-5-14 22:25:00[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 22:25:00[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: select hid, hname, content, startTime, endTime, uid, ucount from huati where uid = ? and like concat('%',?,'%') 
+2020-5-14 22:25:00[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 2(Integer), abc(String)
+2020-5-14 22:31:17[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 22:31:17[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: select hid, hname, content, startTime, endTime, uid, ucount from huati where uid = ? and hname like concat('%',?,'%') 
+2020-5-14 22:31:17[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 2(Integer), abc(String)
+2020-5-14 22:38:45[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 22:38:45[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: select hid, hname, content, startTime, endTime, uid, ucount from huati where uid = ? and hname like concat('%',?,'%') 
+2020-5-14 22:38:45[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 2(Integer), abc(String)
+2020-5-14 22:41:31[DEBUG](JakartaCommonsLoggingImpl.java:46) ooo Using Connection [jdbc:mysql://localhost:3306/vote?useUnicode=true&characterEncoding=utf8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2020-5-14 22:41:31[DEBUG](JakartaCommonsLoggingImpl.java:46) ==>  Preparing: select hid, hname, content, startTime, endTime, uid, ucount from huati where uid = ? and hname like concat('%',?,'%') 
+2020-5-14 22:41:31[DEBUG](JakartaCommonsLoggingImpl.java:46) ==> Parameters: 2(Integer), abc(String)

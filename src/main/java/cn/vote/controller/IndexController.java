@@ -1,6 +1,7 @@
 package cn.vote.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -21,12 +22,13 @@ public class IndexController {
     public String shopcart(){
         return "user";
     }
-//    @RequestMapping("/login")
-//    public String pay(){
-//        return "login";
-//    }
-    @RequestMapping("/success")
-    public String success(){
-        return "home/success";
+    @RequestMapping("/tongji")
+    public String pay(){
+        return "tongji";
+    }
+    @RequestMapping("/doindex")
+    public String success(Model model){
+
+        return "index";
     }
 }

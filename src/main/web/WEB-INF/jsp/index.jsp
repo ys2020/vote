@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,81 +17,24 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="">首页</a></li>
+    <li><a href="/index">首页</a></li>
     <li><a href="">功能介绍</a><li>
-    <li><a href="">个人中心</a></li>
-    <li><a href="">你好，aaaa</a></li>
-    <li><a href="">注销</a></li>
+    <li><a href="/userinfo">个人中心</a></li>
+    <li><a href="">你好，${userSession.uname}</a></li>
+    <li><a href="/logout">注销</a></li>
 </div>
 <div class="dovote">
     <p style="font-size: 30px;">-----------投票系统--------</p>
-    <p style="font-size: 16px;color: greenyellow;">活动介绍：111111111111111111111111111111111111</p>
+    <p style="font-size: 16px;color: greenyellow;">活动介绍：${huati.hname}</p>
+    <p style="font-size: 16px;color: greenyellow;">活动介绍：${huati.content}</p>
     <div id="vote">
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p style="text-align: center">11111</p>
-            <span style="text-align: center">111111111111111111111111111111</span>
-            <p><button type="button" class="btn btn-primary">投票</button></p>
-        </div>
-        <div class="col-md-3">
-            <p>3333333333</p>
-            <span>333333333333333333333333</span>
-        </div>
-        <div class="col-md-3">
-            <p>3333333333</p>
-            <span>333333333333333333333333</span>
-        </div>
-        <div class="col-md-3">
-            <p>3333333333</p>
-            <span>333333333333333333333333</span>
-        </div>
-        <div class="col-md-3">
-            <p>3333333333</p>
-            <span>333333333333333333333333</span>
-        </div>
-        <div class="col-md-3">
-            <p>3333333333</p>
-            <span>333333333333333333333333</span>
-        </div>
+        <c:forEach items="${xuan}" var="xx">
+            <div class="col-md-3" style="width: 280px">
+                <p style="text-align: center">${xx.xname}</p>
+                <span style="text-align: center">${xx.xcontent}</span>
+                <p><button type="button" class="btn btn-primary">投票</button></p>
+            </div>
+        </c:forEach>
     </div>
 </div>
 </body>

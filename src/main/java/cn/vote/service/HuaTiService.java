@@ -16,6 +16,8 @@ public interface HuaTiService {
 
     Huati selectByPrimaryKey(Integer hid);
 
+    Huati selectByUidAndHname(Integer uid,String hname);
+
     int updateByPrimaryKeySelective(Huati record);
 
     int updateByPrimaryKey(Huati record);

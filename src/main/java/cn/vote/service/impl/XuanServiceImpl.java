@@ -50,4 +50,15 @@ public class XuanServiceImpl implements XuanService {
     public int dovote(Integer id) {
         return xuanMapper.dovote(id);
     }
+
+    @Override
+    public List<Xuan> selectByHname(String hname) {
+        return xuanMapper.selectByHname(hname);
+    }
+
+    @Override
+    public List<Xuan> selectXuanByHid(Integer hid) {
+        return xuanMapper.selectXuanByHid(hid);
+    }
+
 }

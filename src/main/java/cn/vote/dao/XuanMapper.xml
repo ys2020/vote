@@ -17,15 +17,21 @@
     from xuan
     where xid = #{xid,jdbcType=INTEGER}
   </select>
+  <select id="selectByHname"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from xuan
+    where hid = (select hid from huati where hname like concat('%',#{hname,jdbcType=VARCHAR},'%'))
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from xuan
     where xid = #{xid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.vote.pojo.Xuan">
-    insert into xuan (xid, hid, xname, 
-      xcount, xcontent)
-    values (#{xid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER}, #{xname,jdbcType=VARCHAR}, 
-      #{xcount,jdbcType=INTEGER}, #{xcontent,jdbcType=VARCHAR})
+    insert into xuan (xid, hid, xname,
+      xcontent)
+    values (#{xid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER}, #{xname,jdbcType=VARCHAR},
+     #{xcontent,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.vote.pojo.Xuan">
     insert into xuan

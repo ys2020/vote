@@ -39,6 +39,11 @@ public class HuaTiServiceImpl implements HuaTiService {
     }
 
     @Override
+    public Huati selectByUidAndHname(Integer uid, String hname) {
+        return huatiMapper.selectByUidAndHname(uid,hname);
+    }
+
+    @Override
     public int updateByPrimaryKeySelective(Huati record) {
         return huatiMapper.updateByPrimaryKeySelective(record);
     }

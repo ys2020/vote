@@ -17,11 +17,11 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="">首页</a></li>
+    <li><a href="/index">首页</a></li>
     <li><a href="">功能介绍</a><li>
-    <li><a href="">个人中心</a></li>
-    <li><a href="">你好，aaaa</a></li>
-    <li><a href="">注销</a></li>
+    <li><a href="/userinfo">个人中心</a></li>
+    <li><a href="">你好，${userSession.uname}</a></li>
+    <li><a href="/logout">注销</a></li>
 </div>
 <div id="content">
     <div id="list">

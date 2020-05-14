@@ -17,11 +17,11 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="">首页</a></li>
+    <li><a href="/index">首页</a></li>
     <li><a href="">功能介绍</a><li>
-    <li><a href="">个人中心</a></li>
-    <li><a href="">你好，aaaa</a></li>
-    <li><a href="">注销</a></li>
+    <li><a href="/userinfo">个人中心</a></li>
+    <li><a href="">你好，${userSession.uname}</a></li>
+    <li><a href="/logout">注销</a></li>
 </div>
 <div id="content">
     <div id="list">
@@ -40,6 +40,13 @@
             <a href="">数据统计</a><p style="width: 100%;"><hr ></p>
         </div>
         <div id="info">
+            <select name="xiala">
+                <c:forEach items="${}" var="hh"></c:forEach>
+                <option value="${hh.hid}">11111111111111111111111111</option>
+                <option value="${hh.hid}">2222222222222222222222222</option>
+                <option value="${hh.hid}">333333333333333333</option>
+            </select>
+            <input type="button" name=""  class="btn btn-primary" value="查看">
             <table class="table table-bordered" style="width: 65vw;">
                 <thead>
                 <tr>

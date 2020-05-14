@@ -85,4 +85,15 @@ public class Huati {
                 ", ucount=" + ucount +
                 '}';
     }
+
+    public Huati() {
+    }
+
+    public Huati(String hname, String content, Date starttime, Date endtime, Integer uid) {
+        this.hname = hname;
+        this.content = content;
+        this.starttime = starttime;
+        this.endtime = endtime;
+        this.uid = uid;
+    }
 }

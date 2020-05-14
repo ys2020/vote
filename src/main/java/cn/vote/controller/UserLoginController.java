@@ -32,7 +32,7 @@ public class UserLoginController {
             return "redirect:/login.html";
         }
         session.setAttribute(Constants.USER_SESSION, devUser);
-        return "redirect:/guanli";
+        return "redirect:/userinfo";
     }
     @RequestMapping(value="/logout",method = RequestMethod.GET)
     public String doLogout(HttpSession session){

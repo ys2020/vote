@@ -62,10 +62,10 @@ public class Xuan {
                 '}';
     }
 
-    public Xuan( Integer hid, String xname, Integer xcount, String xcontent) {
+    public Xuan(Integer xid, Integer hid, String xname, String xcontent) {
+        this.xid = xid;
         this.hid = hid;
         this.xname = xname;
-        this.xcount = xcount;
         this.xcontent = xcontent;
     }
 

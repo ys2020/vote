@@ -14,11 +14,11 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="">首页</a></li>
+    <li><a href="/index">首页</a></li>
     <li><a href="">功能介绍</a><li>
-    <li><a href="">个人中心</a></li>
-    <li><a href="">登录</a></li>
-    <li><a href="">注册</a></li>
+    <li><a href="/userinfo">个人中心</a></li>
+    <li><a href="">你好，${userSession.uname}</a></li>
+    <li><a href="/logout">注销</a></li>
 </div>
 <div id="content" style="width: 65vw;">
     <div id="list">
@@ -37,10 +37,11 @@
             <a href="">创建投票</a><p style="width: 100%;"><hr ></p>
         </div>
         <div id="info">
-            <form id="myform">
-                <p>活动名称：<input type="text" name="hname" id="hname" value="" /><p/>
-                <p>活动时间：<input type="date" name="startTime" id="startTime" value="" />-  到  -<input type="date" name="endTime" id="endTime" value="" /><p/>
-                <p><span id="textfont" style="color: #000000;">活动内容：</span><textarea id="text" name="text"></textarea></p>
+            <form id="myform" action="/addhuati" method="post">
+                <input type="hidden" name="uid" value="${userSession.uid}">
+                <p>活动名称：<input type="text" name="hname" id="hname" value=""/><p/>
+                <p>活动时间：<input type="date" name="starttime" id="startTime" value="" />-  到  -<input type="date" name="endtime" id="endTime" value="" /><p/>
+                <p><span style="color: #000000;">活动内容：</span><textarea id="text" name="content"></textarea></p>
                 <p><input type="submit" name="" id="" value="保存并下一步" style="color: #FFFFFF;background: #007AFF;" /></p>
             </form>
         </div>
@@ -74,7 +75,7 @@
                 $endTime.focus();
                 return false;
             }
-            var $textfont = $('#textfont');
+            var $textfont = $('#text');
             if($textfont.val() == '') {
                 alert('活动介绍不能为空！');
                 $textfont.focus();

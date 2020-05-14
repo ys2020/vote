@@ -17,11 +17,11 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="">首页</a></li>
+    <li><a href="/index">首页</a></li>
     <li><a href="">功能介绍</a><li>
-    <li><a href="">个人中心</a></li>
-    <li><a href="">你好，aaaa</a></li>
-    <li><a href="">注销</a></li>
+    <li><a href="/userinfo">个人中心</a></li>
+    <li><a href="">你好，${userSession.uname}</a></li>
+    <li><a href="/logout">注销</a></li>
 </div>
 <div id="content">
     <div id="list">
@@ -40,13 +40,14 @@
             <a href="">创建投票</a><p style="width: 100%;"><hr ></p>
         </div>
         <button type="button" onclick="add()" value="添加新选项" class="btn btn-primary" style="margin-bottom: 5px;">添加新选项</button>
-        <from>
+        <form action="/addxuan" method="post">
             <div id="info" style="width: 65vw">
                 <div class="xuanxiang" id="xuanxiang1">
                     <div class="bianhao">
-                        编号:1 <input type="text" name="id"  placeholder="请输入名称" rel="519050" value=""><br/>
-                        选项名称:<input type="text" name="hname"  placeholder="请输入名称" rel="519050" value=""><br/>
-                        选项描述:<input type="text" name="des"  placeholder="请输入名称" rel="519050" value="">
+                        <input type="hidden" name="xuans[0].hid" value="${huati.hid}">
+                        编号:1  <input type="hidden" name="xuans[0].xid"  placeholder="请输入编号"  value="1"><br/>
+                        选项名称:<input type="text" name="xuans[0].xname"  placeholder="请输入名称" rel="519050" value=""><br/>
+                        选项描述:<input type="text" name="xuans[0].xcontent"  placeholder="请输入描述" rel="519050" value="">
                     </div>
                     <div class="addbtn">
                         <button class="btn btn-primary" rel="519050" Describe="">修改描述</button>
@@ -56,18 +57,19 @@
 
                 <div class="xuanxiang" id="xuanxiang2">
                     <div class="bianhao">
-                        编号:2 <input type="text" name="id"  placeholder="请输入名称" rel="519050" value=""><br/>
-                        选项名称:<input type="text" name="hname"  placeholder="请输入名称" rel="519050" value=""><br/>
-                        选项描述:<input type="text" name="des"  placeholder="请输入名称" rel="519050" value="">
+                        <input type="hidden" name="xuans[1].hid" value="${huati.hid}">
+                        编号:2  <input type="hidden" name="xuans[1].xid"  placeholder="请输入编号"  value="2"><br/>
+                        选项名称:<input type="text" name="xuans[1].xname"  placeholder="请输入名称" rel="519050" value=""><br/>
+                        选项描述:<input type="text" name="xuans[1].xcontent"  placeholder="请输入描述" rel="519050" value="">
                     </div>
                     <div class="addbtn">
-                        <button class="btn btn-primary" name=""  id="" rel="519050" Describe="">修改描述</button>
-                        <button class="btn btn-primary" name=""  id="" onclick="Del(2)">删除选项</button>
+                        <button class="btn btn-primary" name=""   rel="519050" Describe="">修改描述</button>
+                        <button class="btn btn-primary" name=""   onclick="Del(2)">删除选项</button>
                     </div>
                 </div>
             </div>
             <button class="submit" name=""  id="" style="color: #FFFFFF;background: #007AFF;width: 70%;height: 7%;">保存并发布</button>
-        </from>
+        </form>
     </div>
 </div>
 </body>
@@ -86,13 +88,14 @@
         var div=document.createElement("div");
         div.innerHTML=
             '<div class="bianhao">'+
-            '编号:'+i+' <input type="text" name="id" class="bh-input nickname" placeholder="请输入名称"  value=""><br/>'+
-            '选项名称:<input type="text" name="hname"  placeholder="请输入名称" rel="519050" value=""><br/>'+
-            '选项描述:<input type="text" name="des"  placeholder="请输入名称" rel="519050" value="">'+
+            '<input type="hidden" name="xuans['+(i-1)+'].hid" value="${huati.hid}">'+
+            '编号:'+i+' <input type="hidden" name="xuans['+(i-1)+'].xid" class="bh-input nickname" placeholder="请输入编号"  value="'+i+'"><br/>'+
+            '选项名称:<input type="text" name="xuans['+(i-1)+'].xname"  placeholder="请输入名称"  value=""><br/>'+
+            '选项描述:<input type="text" name="xuans['+(i-1)+'].xcontent"  placeholder="请输入描述"  value="">'+
             '</div>'+
             '<div class="addbtn">'+
-            '<button class="btn btn-primary" rel="519050" Describe="">修改描述</button>'+
-            '<button class="btn btn-primary" rel="519050" onclick="Del('+i+')">删除选项</button>'+
+            '<button class="btn btn-primary"  Describe="">修改描述</button>'+
+            '<button class="btn btn-primary"  onclick="Del('+i+')">删除选项</button>'+
             '</div>';
         div.id="xuanxiang"+i;
         div.className="xuanxiang";
