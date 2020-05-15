@@ -17,8 +17,6 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="/index">首页</a></li>
-    <li><a href="">功能介绍</a><li>
     <li><a href="/userinfo">个人中心</a></li>
     <li><a href="">你好，${userSession.uname}</a></li>
     <li><a href="/logout">注销</a></li>
@@ -29,7 +27,7 @@
             账号管理
         </div>
         <div id="tlist">
-            <li><a href="/index">个人资料</a></li>
+            <li><a href="/userinfo">个人资料</a></li>
             <li><a href="/huati">创建投票</a></li>
             <li><a href="/guanli">活动管理</a></li>
             <li><a href="/tongji">数据统计</a></li>
@@ -51,7 +49,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${huati}" var="hh">
+                <c:forEach items="${ht}" var="hh">
                     <tr>
                         <td  style="word-break : break-all; overflow:hidden;">${hh.hname}</td>
                         <td  style="word-break : break-all; overflow:hidden; ">${hh.content}</td>

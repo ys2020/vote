@@ -16,10 +16,16 @@ import java.util.List;
 public class HuatiController {
     @Autowired
     HuaTiService huaTiService;
-    @RequestMapping("/guanli")
+    @RequestMapping("/tongji")
     public String gethuaTi(Model model){
         List<Huati> huati = huaTiService.getHuati();
-        model.addAttribute("huati",huati);
+        model.addAttribute("hua",huati);
+        return "tongji";
+    }
+    @RequestMapping("/guanli")
+    public String toguanli(Model model){
+        List<Huati> huati = huaTiService.getHuati();
+        model.addAttribute("ht",huati);
         return "guanli";
     }
     @RequestMapping(value = "/addhuati",method = RequestMethod.POST)

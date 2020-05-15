@@ -16,8 +16,8 @@ public interface UserMapper {
     int insert(User record);
 
     int insertSelective(User record);
-
-    User selectByPrimaryKey(Integer uid);
+    @Select("select * from user where uid =#{uid}")
+    User selectByPrimaryKey(@Param("uid")Integer uid);
 
     int updateByPrimaryKeySelective(User record);
 

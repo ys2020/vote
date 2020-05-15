@@ -26,6 +26,8 @@ public interface XuanMapper {
     int updateByPrimaryKeySelective(Xuan record);
 
     int updateByPrimaryKey(Xuan record);
-    @Update("UPDATE xuan SET xcount=xcount+1 WHERE xid =#{xid}")
-    int dovote(Integer id);
+    @Update("UPDATE xuan SET xcount=xcount+1 WHERE xid =#{xid} and hid =#{hid}")
+    int dovote(@Param("xid")Integer xid,@Param("hid")Integer hid);
+    @Select("select * from xuan WHERE xid =#{xid} and hid =#{hid}")
+    Xuan selectxdid(@Param("xid")Integer xid,@Param("hid")Integer hid);
 }

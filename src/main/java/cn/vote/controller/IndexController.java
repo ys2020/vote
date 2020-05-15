@@ -22,13 +22,13 @@ public class IndexController {
     public String shopcart(){
         return "user";
     }
-    @RequestMapping("/tongji")
-    public String pay(){
-        return "tongji";
-    }
-    @RequestMapping("/doindex")
-    public String success(Model model){
-
-        return "index";
-    }
+//    @RequestMapping("/tongji")
+//    public String pay(){
+//        return "tongji";
+//    }
+//    @RequestMapping("/doindex")
+//    public String success(Model model){
+//
+//        return "index";
+//    }
 }

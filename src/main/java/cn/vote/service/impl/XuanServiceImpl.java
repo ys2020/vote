@@ -47,8 +47,8 @@ public class XuanServiceImpl implements XuanService {
     }
 
     @Override
-    public int dovote(Integer id) {
-        return xuanMapper.dovote(id);
+    public int dovote(Integer xid,Integer hid) {
+        return xuanMapper.dovote(xid,hid);
     }
 
     @Override
@@ -59,6 +59,11 @@ public class XuanServiceImpl implements XuanService {
     @Override
     public List<Xuan> selectXuanByHid(Integer hid) {
         return xuanMapper.selectXuanByHid(hid);
+    }
+
+    @Override
+    public Xuan selectxdid(Integer id, Integer hid) {
+        return xuanMapper.selectxdid(id, hid);
     }
 
 }

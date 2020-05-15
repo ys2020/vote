@@ -17,6 +17,7 @@ public class UserServiceImplTest1 extends BaseTest {
     }
     @Test
     public void testInsert() {
+
     }
     @Test
     public void testInsertSelective() {
@@ -24,7 +25,7 @@ public class UserServiceImplTest1 extends BaseTest {
     @Test
     public void testSelectByPrimaryKey() {
 
-        User user = userMapper.selectByPrimaryKey(1);
+        User user = userMapper.selectByPrimaryKey(3);
         System.out.println(user.toString());
     }
 

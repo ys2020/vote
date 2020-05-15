@@ -6,10 +6,10 @@
     <result column="uname" jdbcType="VARCHAR" property="uname" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    uid, uname, password, phone, create_time
+    uid, uname, password, phone, createtime
   </sql>
 
   <select id="getuserName" resultType="User" >
@@ -23,10 +23,8 @@
     where uid = #{uid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.vote.pojo.User">
-    insert into user (uid, uname, password, 
-      phone, create_time)
-    values (#{uid,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+    insert into user ( uname, password)
+    values (#{uname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.vote.pojo.User">
     insert into user
@@ -78,7 +76,7 @@
         phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+        createtime = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where uid = #{uid,jdbcType=INTEGER}
@@ -88,7 +86,7 @@
     set uname = #{uname,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
+      createtime = #{createTime,jdbcType=TIMESTAMP}
     where uid = #{uid,jdbcType=INTEGER}
   </update>
 </mapper>

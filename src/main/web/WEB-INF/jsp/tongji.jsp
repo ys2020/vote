@@ -17,8 +17,6 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="/index">首页</a></li>
-    <li><a href="">功能介绍</a><li>
     <li><a href="/userinfo">个人中心</a></li>
     <li><a href="">你好，${userSession.uname}</a></li>
     <li><a href="/logout">注销</a></li>
@@ -29,7 +27,7 @@
             账号管理
         </div>
         <div id="tlist">
-            <li><a href="/index">个人资料</a></li>
+            <li><a href="/userinfo">个人资料</a></li>
             <li><a href="/huati">创建投票</a></li>
             <li><a href="/guanli">活动管理</a></li>
             <li><a href="/tongji">数据统计</a></li>
@@ -40,13 +38,12 @@
             <a href="">数据统计</a><p style="width: 100%;"><hr ></p>
         </div>
         <div id="info">
-            <select name="xiala">
-                <c:forEach items="${}" var="hh"></c:forEach>
-                <option value="${hh.hid}">11111111111111111111111111</option>
-                <option value="${hh.hid}">2222222222222222222222222</option>
-                <option value="${hh.hid}">333333333333333333</option>
+            <select id="xiala">
+                <c:forEach items="${hua}" var="hh">
+                <option value="${hh.hid}">${hh.hname}</option>
+                </c:forEach>
             </select>
-            <input type="button" name=""  class="btn btn-primary" value="查看">
+            <input type="button" name=""  class="btn btn-primary" onclick="getxuan()" value="查看">
             <table class="table table-bordered" style="width: 65vw;">
                 <thead>
                 <tr>
@@ -56,18 +53,8 @@
                     <th>操作</th>
                 </tr>
                 </thead>
-                <tbody>
-               <c:forEach items="${xuan}" var="xx">
-                   <tr>
-                       <td style="width: 5vw">${xx.xname}</td>
-                       <td style="word-break : break-all; overflow:hidden;width: 50vw">${xx.xcontent}</td>
-                       <td style="width:6vw">${xx.xcount}</td>
-                       <td>
-                           <button type="button" class="btn btn-primary">编辑</button>
-                           <button type="button" class="btn btn-danger">删除</button>
-                       </td>
-                   </tr>
-               </c:forEach>
+                <tbody id="tbody">
+
                 </tbody>
             </table>
         </div>
@@ -81,5 +68,34 @@
     },function(){
         $(this).css("background-color","#fff");
     });
+    $("#xiala option:first").prop("selected", 'selected');
+
+        function getxuan(){
+            var hid=$("#xiala option:selected").val();
+            $.ajax({
+                url: "/getxuan",
+                type: "get",
+                dataType: "json",
+                data: {
+                    "hid": hid
+                },
+                success: function (data) {
+                    var str=""
+                    $.each(data,function (index,item) {
+                        str+='<tr>'
+                        str+='<td style="width: 5vw">'+item.xname+'</td>'
+                        str+='<td style="word-break : break-all; overflow:hidden;width: 50vw">'+item.xcontent+'</td>'
+                        str+='<td style="width:6vw">'+item.xcount+'</td>'
+                        str+='<td>'
+                        str+='<button type="button" class="btn btn-primary">编辑</button>'
+                        str+='<button type="button" class="btn btn-danger">删除</button>'
+                        str+='</td>'
+                        str+='</tr>'
+                    });
+                    $("#tbody").html(str);
+                }
+            });
+        }
+
 </script>
 </html>

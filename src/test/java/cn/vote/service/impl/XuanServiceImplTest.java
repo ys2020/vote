@@ -28,8 +28,8 @@ public class XuanServiceImplTest extends BaseTest {
 
     @Test
     public void dovote() {
-        int dovote = xuanMapper.dovote(4);
-        System.out.println(dovote);
+
+
     }
 
     @Test
@@ -37,5 +37,9 @@ public class XuanServiceImplTest extends BaseTest {
         Xuan xx =new Xuan(3,2,"5678","hahhahaha");
         int insert = xuanMapper.insert(xx);
         System.out.println(insert);
+    }
+
+    @Test
+    public void testDovote() {
     }
 }

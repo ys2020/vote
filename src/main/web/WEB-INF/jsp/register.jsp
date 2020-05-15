@@ -1,12 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: 羊来
-  Date: 2020/5/13
-  Time: 23:22
+  Date: 2020/5/15
+  Time: 21:03
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,31 +17,37 @@
 <body>
 <div class="nav-top">
     <li><a href="/userinfo">个人中心</a></li>
-    <li><a href="">登录</a></li>
+    <li><a href="">你好，${userSession.uname}</a></li>
     <li><a href="/logout">注销</a></li>
 </div>
 <div id="login">
     <div id="loginform">
-        <form class="form-horizontal" role="form" action="/dologin" method="post" id="myform">
+        <form class="form-horizontal" role="form" id="myform">
             <div class="form-group">
-                <label for="firstname" class="col-sm-3 control-label">用户名：</label>
+                <label for="firstname" class="col-sm-4 control-label">用户名：</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="firstname" name="uname" placeholder="请输入用户名或手机号">
+                    <input type="text" class="form-control" id="firstname" name="uname" placeholder="请输入用户名">
                 </div>
             </div>
             <div class="form-group">
-                <label for="lastname" class="col-sm-3 control-label">密码：</label>
+                <label for="lastname" class="col-sm-4 control-label">密码：</label>
                 <div class="col-sm-12">
-                    <input type="password" class="form-control" id="lastname" name="password" placeholder="请输入密码">
+                    <input type="text" class="form-control" id="lastname" name="password" placeholder="请输入密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname1" class="col-sm-4 control-label">确认密码：</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="lastname1" name="npassword" placeholder="请再次输入密码">
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-3">
-                    <button type="submit" class="btn btn-default">登录</button>
+                    <button type="submit" class="btn btn-default">注册</button>
                 </div>
                 <div class="col-sm-offset-2 col-sm-3">
-                    <button type="button" class="btn btn-default"  onclick="location.href='/register'">注册</button>
+                    <button type="button" class="btn btn-default" onclick="location.href='/login'">取消</button>
                 </div>
             </div>
 
@@ -68,6 +73,12 @@
             var $startTime = $('#lastname');
             if($startTime.val() == '') {
                 alert('密码不能为空！');
+                $startTime.focus();
+                return false;
+            }
+            var $startTime = $('#lastname1');
+            if($startTime.val() == '') {
+                alert('确认密码不能为空！');
                 $startTime.focus();
                 return false;
             }

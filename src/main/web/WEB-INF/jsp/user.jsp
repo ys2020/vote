@@ -14,8 +14,6 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="/index">首页</a></li>
-    <li><a href="">功能介绍</a><li>
     <li><a href="/userinfo">个人中心</a></li>
     <li><a href="">你好，${userSession.uname}</a></li>
     <li><a href="/logout">注销</a></li>
@@ -26,7 +24,7 @@
             账号管理
         </div>
         <div id="tlist">
-            <li><a href="/index">个人资料</a></li>
+            <li><a href="/userinfo">个人资料</a></li>
             <li><a href="/huati">创建投票</a></li>
             <li><a href="/guanli">活动管理</a></li>
             <li><a href="/tongji">数据统计</a></li>
@@ -37,9 +35,9 @@
             <a href="">个人中心</a><p style="width: 100%;"><hr ></p>
         </div>
         <div id="info">
-            <p>用户昵称：<span class="font">aaaaa</span></p>
-            <p>手机号码：<span class="font">11111111</span></p>
-            <p>注册时间：<span class="font">2222222</span></p>
+            <p>用户昵称：<span class="font">${userSession.uname}</span></p>
+            <p>手机号码：<span class="font">${userSession.phone}</span></p>
+            <p>注册时间：<span class="font">${userSession.createTime}</span></p>
         </div>
     </div>
 </div>

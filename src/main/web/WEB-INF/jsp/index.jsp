@@ -17,8 +17,6 @@
 </head>
 <body>
 <div class="nav-top">
-    <li><a href="/index">首页</a></li>
-    <li><a href="">功能介绍</a><li>
     <li><a href="/userinfo">个人中心</a></li>
     <li><a href="">你好，${userSession.uname}</a></li>
     <li><a href="/logout">注销</a></li>
@@ -28,11 +26,13 @@
     <p style="font-size: 16px;color: greenyellow;">活动介绍：${huati.hname}</p>
     <p style="font-size: 16px;color: greenyellow;">活动介绍：${huati.content}</p>
     <div id="vote">
-        <c:forEach items="${xuan}" var="xx">
+        <c:forEach items="${xuans}" var="xx">
             <div class="col-md-3" style="width: 280px">
+                <input type="hidden" id="xid${xx.xid}" value="${xx.xid}">
                 <p style="text-align: center">${xx.xname}</p>
                 <span style="text-align: center">${xx.xcontent}</span>
-                <p><button type="button" class="btn btn-primary">投票</button></p>
+                <p><button type="button" class="btn btn-primary" onclick="Dovote(${xx.xid})">投票</button></p>
+                <span id="xcount${xx.xid}" style="text-align: center">${xx.xcount}</span>
             </div>
         </c:forEach>
     </div>
@@ -45,6 +45,27 @@
     },function(){
         $(this).css("background-color","#fff");
     });
+    var hid=${huati.hid};
+    function Dovote(xid){
+        var msg='确定要投票吗？';
+        xcount="#xcount";
+        xcount+=xid;
+        var count=this.$(xcount);
+        if (confirm(msg)) {
+            $.ajax({
+                url: "/addvote",
+                type: "post",
+                dataType: "json",
+                data: {
+                    "id": xid,
+                    "hid": hid
+                },
+                success: function (data) {
+                    count.text(data.xcount);
+                }
+            });
+        }
+    }
 </script>
 </html>
 

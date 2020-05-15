@@ -19,9 +19,11 @@ public interface XuanService {
 
     int updateByPrimaryKey(Xuan record);
 
-    int dovote(Integer id);
+    int dovote(Integer xid,Integer hid);
 
     List<Xuan> selectByHname(String hname);
 
     List<Xuan> selectXuanByHid(Integer hid);
+
+    Xuan selectxdid(Integer id,Integer hid);
 }

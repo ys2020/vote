@@ -63,4 +63,12 @@ public class User {
                 ", createTime=" + createTime +
                 '}';
     }
+
+    public User(String uname, String password) {
+        this.uname = uname;
+        this.password = password;
+    }
+
+    public User() {
+    }
 }
