@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.SimpleFormatter;
 
 
@@ -39,5 +40,14 @@ public class HuaTiServiceImplTest extends BaseTest {
     public void selectByUidAndHname() {
         Huati abc = huatiMapper.selectByUidAndHname(2, "abc");
         System.out.println(abc.toString());
+    }
+
+    @Test
+    public void getHuati() {
+        List<Huati> huatis =huatiMapper.getHuati(2);
+        for (Huati hh:huatis
+             ) {
+            System.out.println(hh.toString());
+        }
     }
 }

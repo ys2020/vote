@@ -39,4 +39,12 @@ public class Utable {
                 ", hid=" + hid +
                 '}';
     }
+
+    public Utable(Integer uid, Integer hid) {
+        this.uid = uid;
+        this.hid = hid;
+    }
+
+    public Utable() {
+    }
 }

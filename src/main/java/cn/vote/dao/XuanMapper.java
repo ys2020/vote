@@ -1,6 +1,7 @@
 package cn.vote.dao;
 
 import cn.vote.pojo.Xuan;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -16,6 +17,10 @@ public interface XuanMapper {
     List<Xuan> selectByHname(String hname);
 
     int deleteByPrimaryKey(Integer xid);
+    @Delete("delete from xuan where hid=#{hid}")
+    int deleteByhid(@Param("hid") Integer hid);
+    @Delete("delete from xuan where hid=#{hid} and xid=#{xid}")
+    int deleteByhidAndxid(@Param("hid") Integer hid,@Param("xid") Integer xid);
 
     int insert(Xuan record);
 

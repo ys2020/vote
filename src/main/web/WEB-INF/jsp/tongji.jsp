@@ -70,32 +70,51 @@
     });
     $("#xiala option:first").prop("selected", 'selected');
 
-        function getxuan(){
-            var hid=$("#xiala option:selected").val();
+    function getxuan(){
+        var hid=$("#xiala option:selected").val();
+        $.ajax({
+            url: "/getxuan",
+            type: "get",
+            dataType: "json",
+            data: {
+                "hid": hid
+            },
+            success: function (data) {
+                var str=""
+                $.each(data,function (index,item) {
+                    str+='<tr id="xuan'+item.xid+'">'
+                    str+='<td style="width: 5vw">'+item.xname+'</td>'
+                    str+='<td style="word-break : break-all; overflow:hidden;width: 50vw">'+item.xcontent+'</td>'
+                    str+='<td style="width:6vw">'+item.xcount+'</td>'
+                    str+='<td>'
+                    str+='<button type="button" class="btn btn-primary">编辑</button>'
+                    str+='<button type="button" class="btn btn-danger" onclick="delxuan('+item.hid+','+item.xid+')">删除</button>'
+                    str+='</td>'
+                    str+='</tr>'
+                });
+                $("#tbody").html(str);
+            }
+        });
+    }
+    function delxuan(hid,xid){
+        var str ="#xuan"+xid;
+        var xuan=$(str);
+        if (confirm("是否删除该话题？")){
             $.ajax({
-                url: "/getxuan",
+                url: "/delxuan",
                 type: "get",
                 dataType: "json",
                 data: {
-                    "hid": hid
+                    "hid": hid,
+                    "xid": xid
                 },
                 success: function (data) {
-                    var str=""
-                    $.each(data,function (index,item) {
-                        str+='<tr>'
-                        str+='<td style="width: 5vw">'+item.xname+'</td>'
-                        str+='<td style="word-break : break-all; overflow:hidden;width: 50vw">'+item.xcontent+'</td>'
-                        str+='<td style="width:6vw">'+item.xcount+'</td>'
-                        str+='<td>'
-                        str+='<button type="button" class="btn btn-primary">编辑</button>'
-                        str+='<button type="button" class="btn btn-danger">删除</button>'
-                        str+='</td>'
-                        str+='</tr>'
-                    });
-                    $("#tbody").html(str);
+                    alert("删除成功");
+                    xuan.remove()
                 }
             });
         }
+    }
 
 </script>
 </html>

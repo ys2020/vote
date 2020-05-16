@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface HuaTiService {
-    List<Huati> getHuati();
+    List<Huati> getHuati(Integer uid);
 
     int deleteByPrimaryKey(Integer hid);
 

@@ -48,16 +48,16 @@
                     <th>操作</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                 <c:forEach items="${ht}" var="hh">
-                    <tr>
+                    <tr id="hua${hh.hid}">
                         <td  style="word-break : break-all; overflow:hidden;">${hh.hname}</td>
                         <td  style="word-break : break-all; overflow:hidden; ">${hh.content}</td>
                         <td style="width: 7vw;">${hh.starttime}</td>
                         <td style="width: 7vw;">${hh.endtime}</td>
                         <td>
-                            <button type="button" class="btn btn-primary">编辑</button>
-                            <button type="button" class="btn btn-danger">删除</button>
+                            <button type="button" class="btn btn-primary" onclick="location.href='/select/${hh.hid}'">查看</button>
+                            <button type="button" class="btn btn-danger" onclick="Del(${hh.hid})">删除</button>
                         </td>
                     </tr>
                 </c:forEach>
@@ -68,12 +68,30 @@
     </div>
 </div>
 </body>
-<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../statics/js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     $("#tlist a").hover(function(){
         $(this).css("background-color","yellow");
     },function(){
         $(this).css("background-color","#fff");
     });
+    function Del(hid){
+        var str ="#hua"+hid;
+        var hua=$(str);
+        if (confirm("是否删除该话题？")){
+            $.ajax({
+                url: "/delhuati",
+                type: "get",
+                dataType: "json",
+                data: {
+                    "hid": hid
+                },
+                success: function (data) {
+                    alert("删除成功");
+                    hua.remove()
+                }
+            });
+        }
+    }
 </script>
 </html>

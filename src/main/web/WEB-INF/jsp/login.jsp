@@ -19,7 +19,6 @@
 <div class="nav-top">
     <li><a href="/userinfo">个人中心</a></li>
     <li><a href="">登录</a></li>
-    <li><a href="/logout">注销</a></li>
 </div>
 <div id="login">
     <div id="loginform">

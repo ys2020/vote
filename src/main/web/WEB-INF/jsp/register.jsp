@@ -22,7 +22,7 @@
 </div>
 <div id="login">
     <div id="loginform">
-        <form class="form-horizontal" role="form" id="myform">
+        <form class="form-horizontal" role="form" id="myform" action="/doregister" method="post">
             <div class="form-group">
                 <label for="firstname" class="col-sm-4 control-label">用户名：</label>
                 <div class="col-sm-12">
@@ -32,13 +32,13 @@
             <div class="form-group">
                 <label for="lastname" class="col-sm-4 control-label">密码：</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="lastname" name="password" placeholder="请输入密码">
+                    <input type="password" class="form-control" id="lastname" name="password" placeholder="请输入密码">
                 </div>
             </div>
             <div class="form-group">
                 <label for="lastname1" class="col-sm-4 control-label">确认密码：</label>
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="lastname1" name="npassword" placeholder="请再次输入密码">
+                    <input type="password" class="form-control" id="lastname1" name="npassword" placeholder="请再次输入密码">
                 </div>
             </div>
 
@@ -70,16 +70,21 @@
                 $hname.focus();
                 return false;
             }
-            var $startTime = $('#lastname');
-            if($startTime.val() == '') {
+            var lastname = $('#lastname');
+            if(lastname.val() == '') {
                 alert('密码不能为空！');
-                $startTime.focus();
+                lastname.focus();
                 return false;
             }
-            var $startTime = $('#lastname1');
-            if($startTime.val() == '') {
+            var lastname1 = $('#lastname1');
+            if(lastname1.val() == '') {
                 alert('确认密码不能为空！');
-                $startTime.focus();
+                lastname1.focus();
+                return false;
+            }
+            if(lastname.val() != lastname1.val()) {
+                alert('两次输入密码不一样！');
+                lastname1.focus();
                 return false;
             }
             return true;

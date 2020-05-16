@@ -2,6 +2,7 @@ package cn.vote.service;
 
 import cn.vote.pojo.Huati;
 import cn.vote.pojo.Utable;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,6 +16,8 @@ public interface UtableService {
     int insertSelective(Utable record);
 
     Utable selectByPrimaryKey(Integer id);
+
+    Utable selectByUidAndHid(Integer uid,Integer hid);
 
     int updateByPrimaryKeySelective(Utable record);
 

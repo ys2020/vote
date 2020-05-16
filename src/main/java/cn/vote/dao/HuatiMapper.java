@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface HuatiMapper {
     //查看话题列表
-    @Select("select * from huati")
-    List<Huati> getHuati();
+    @Select("select * from huati where uid =#{uid}")
+    List<Huati> getHuati(@Param("uid")Integer uid);
 
     int deleteByPrimaryKey(@Param("hid")Integer  hid);
     //添加话题

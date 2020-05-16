@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-public class xuanController {
+public class XuanController {
     @Autowired
     XuanService xuanService;
     @Autowired
@@ -40,17 +40,20 @@ public class xuanController {
             }
         //添加成功去投票页面查看
         int hid =xuans.get(0).getHid();
-//        List<Xuan> xuans1 = xuanService.selectXuanByHid(hid);
-        session.setAttribute("xuans",xuans);
+        List<Xuan> newXuans = xuanService.selectXuanByHid(hid);
+        session.setAttribute("xuans",newXuans);
         Huati huati = service.selectByPrimaryKey(hid);
         session.setAttribute("huati",huati);
         return "redirect:/index";
     }
-    @RequestMapping(value = "/addvote",method = RequestMethod.POST)
+
+    @RequestMapping("/delxuan")
     @ResponseBody
-    public Object dovote(Integer id,Integer hid){
-       xuanService.dovote(id, hid);
-        Xuan xuan = xuanService.selectxdid(id, hid);
-        return xuan;
+    public String delxuan(Integer hid,Integer xid){
+        int i=xuanService.deleteByhidAndxid(hid, xid);
+        if (i>0){
+            return "true";
+        }
+        return "false";
     }
 }

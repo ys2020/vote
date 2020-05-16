@@ -14,8 +14,8 @@ public class HuaTiServiceImpl implements HuaTiService {
     HuatiMapper huatiMapper;
 
     @Override
-    public List<Huati> getHuati() {
-        return huatiMapper.getHuati();
+    public List<Huati> getHuati(Integer uid) {
+        return huatiMapper.getHuati(uid);
     }
 
     @Override

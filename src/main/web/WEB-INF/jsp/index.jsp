@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../statics/css/bootstrap.css"/>
     <script src="../../statics/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
+<body style="background-image: url('/statics/img/777.jpg')">
 <div class="nav-top">
     <li><a href="/userinfo">个人中心</a></li>
     <li><a href="">你好，${userSession.uname}</a></li>
@@ -23,8 +23,9 @@
 </div>
 <div class="dovote">
     <p style="font-size: 30px;">-----------投票系统--------</p>
-    <p style="font-size: 16px;color: greenyellow;">活动介绍：${huati.hname}</p>
-    <p style="font-size: 16px;color: greenyellow;">活动介绍：${huati.content}</p>
+    <p style="font-size: 16px;color: black;">活动名称：${huati.hname}</p>
+    <p style="font-size: 16px;color: black;">活动介绍：${huati.content}</p>
+    <p style="font-size: 16px;color: black;">活动时间：${huati.starttime}---${huati.endtime}</p>
     <div id="vote">
         <c:forEach items="${xuans}" var="xx">
             <div class="col-md-3" style="width: 280px">
@@ -32,7 +33,7 @@
                 <p style="text-align: center">${xx.xname}</p>
                 <span style="text-align: center">${xx.xcontent}</span>
                 <p><button type="button" class="btn btn-primary" onclick="Dovote(${xx.xid})">投票</button></p>
-                <span id="xcount${xx.xid}" style="text-align: center">${xx.xcount}</span>
+                <span id="xcount${xx.xid}" style="text-align: center">得票数：${xx.xcount}</span>
             </div>
         </c:forEach>
     </div>
@@ -46,6 +47,7 @@
         $(this).css("background-color","#fff");
     });
     var hid=${huati.hid};
+    var uid=${userSession.uid}
     function Dovote(xid){
         var msg='确定要投票吗？';
         xcount="#xcount";
@@ -54,14 +56,19 @@
         if (confirm(msg)) {
             $.ajax({
                 url: "/addvote",
-                type: "post",
+                type: "get",
                 dataType: "json",
                 data: {
-                    "id": xid,
-                    "hid": hid
+                    "xid": xid,
+                    "hid": hid,
+                    "uid": uid
                 },
                 success: function (data) {
-                    count.text(data.xcount);
+                    if (data==false){
+                        alert("你已经投过票啦！");
+                    }else {
+                        count.text("得票数："+data.xcount);
+                    }
                 }
             });
         }

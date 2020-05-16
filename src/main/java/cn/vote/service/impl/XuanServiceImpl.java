@@ -47,6 +47,16 @@ public class XuanServiceImpl implements XuanService {
     }
 
     @Override
+    public int deleteByhidAndxid(Integer hid, Integer xid) {
+        return xuanMapper.deleteByhidAndxid(hid,xid);
+    }
+
+    @Override
+    public int deleteByhid(Integer hid) {
+        return xuanMapper.deleteByhid(hid);
+    }
+
+    @Override
     public int dovote(Integer xid,Integer hid) {
         return xuanMapper.dovote(xid,hid);
     }

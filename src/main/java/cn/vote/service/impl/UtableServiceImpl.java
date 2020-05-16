@@ -39,6 +39,11 @@ public class UtableServiceImpl implements UtableService {
     }
 
     @Override
+    public Utable selectByUidAndHid(Integer uid, Integer hid) {
+        return utableMapper.selectByUidAndHid(uid, hid);
+    }
+
+    @Override
     public int updateByPrimaryKeySelective(Utable record) {
         return utableMapper.updateByPrimaryKeySelective(record);
     }

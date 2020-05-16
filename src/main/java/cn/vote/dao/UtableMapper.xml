@@ -20,8 +20,8 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.vote.pojo.Utable">
-    insert into utable (id, uid, hid)
-    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER})
+    insert into utable (uid, hid)
+    values (#{uid,jdbcType=INTEGER}, #{hid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cn.vote.pojo.Utable">
     insert into utable
